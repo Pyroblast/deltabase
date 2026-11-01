@@ -1,0 +1,1096 @@
+{
+  "schemaVersion": 1,
+  "packageId": "funding-manual-mvp-2026-11-01",
+  "researchDate": "2026-11-01",
+  "displayTimezone": "Asia/Shanghai",
+  "status": "research_fixture_prepared_not_executed",
+  "format": "neutral_research_fixture_not_api_request",
+  "scope": "隔离验收用公开事实摘要；不导入个人数据库；不代表资金到账核验",
+  "contractAtPreparation": "首次整理时契约未出现；交付前已只读核对 shared/funding.ts 与 docs/design/funding-api.md，追加 apiDrafts 适配样本，未调用 API。",
+  "timePolicy": {
+    "webObservationPrecision": "day",
+    "webObservationNote": "2026-11-01 通过网页阅读工具访问，可能命中缓存；不等于服务器主动抓取或网页当日更新",
+    "firstSeenAt": "由被测服务首次成功保存时生成，不从本文件研究日期或历史公告日期复制",
+    "observedAt": "由每次实际核验操作记录；自动化测试应注入测试时钟并明确其为合成时间",
+    "sourceUpdatedAt": null,
+    "unknownDatePolicy": "null；不补为公告日、月初、年初或今天"
+  },
+  "baselineExpectations": {
+    "announcedFundingEvents": 2,
+    "unverifiedLeads": 1,
+    "linkedPrimaryEvidenceDocuments": 4,
+    "auxiliaryPagesInPackage": 2,
+    "automaticAppLinksCreated": 0,
+    "meaning": "两条可核对原文的融资公告，不是两笔独立确认到账的融资；辅助页不额外制造事件"
+  },
+  "sources": [
+    {
+      "id": "boldvoice-company-release",
+      "url": "https://www.prnewswire.com/news-releases/boldvoice-raises-21m-series-a-to-give-a-billion-non-native-english-speakers-their-own-ai-voice-coach-302671777.html",
+      "titleSummary": "BoldVoice 宣布 2100 万美元符号金额的 A 轮融资",
+      "publisher": "BoldVoice",
+      "host": "PR Newswire",
+      "sourceRole": "company_release_on_distribution_platform",
+      "evidenceNature": "company_statement",
+      "observedOn": "2026-11-01",
+      "accessResult": "readable",
+      "published": {
+        "raw": "Jan 28, 2026, 09:30 ET",
+        "date": "2026-01-28",
+        "precision": "minute",
+        "timezoneRaw": "ET",
+        "normalizedUtc": "2026-01-28T14:30:00Z",
+        "normalizationBasis": "将页面 ET 按美国东部时间 America/New_York 解读；1月28日为 UTC-05:00",
+        "locator": "标题下发布者与时间栏"
+      },
+      "sourceUpdatedAt": null,
+      "shortExcerpt": "$21 million Series A round led by Matrix",
+      "summary": "公司稿首段披露本轮金额、轮次、领投与参投名单；次段陈述扩张及研发用途。未提供交割日或估值。",
+      "supports": [
+        "company_identity",
+        "round",
+        "round_amount_raw",
+        "round_amount_magnitude",
+        "announced_on",
+        "investor_roles",
+        "planned_use_of_funds"
+      ],
+      "doesNotSupport": [
+        "cash_received",
+        "closing_date",
+        "valuation",
+        "explicit_iso_currency",
+        "independent_media_verification"
+      ],
+      "locatorNotes": {
+        "publisher": "News provided by 与稿尾 SOURCE 都标明 BoldVoice",
+        "roundAndInvestors": "纽约日期行后的首段",
+        "excludedInvestor": "Liquid 2 仅在文末公司背景的历史支持者名单中出现，不列为本轮参投者",
+        "excludedNumber": "$10M ARR 是收入自述，不是融资额或估值"
+      }
+    },
+    {
+      "id": "agave-company-announcement",
+      "url": "https://useagave.com/blog/announcing-agaves-15m-series-a",
+      "titleSummary": "Agave 的 A 轮融资公告",
+      "publisher": "Agave",
+      "host": "useagave.com",
+      "sourceRole": "company_announcement",
+      "evidenceNature": "company_statement",
+      "observedOn": "2026-11-01",
+      "accessResult": "readable",
+      "published": {
+        "raw": "2026-07-07",
+        "date": "2026-07-07",
+        "precision": "day",
+        "timezoneRaw": null,
+        "normalizedUtc": null,
+        "basisSourceId": "agave-article-index",
+        "locator": "日期来自官网文章列表对应标题卡片，详情可读正文未显示日期"
+      },
+      "sourceUpdatedAt": null,
+      "shortExcerpt": "$15M Series A led by Accel",
+      "summary": "公司称本轮为 1500 万美元符号金额、Accel 领投、YC 继续参与；累计融资超过 2000 万美元符号金额。用途为扩大团队和产品范围。",
+      "supports": [
+        "company_identity",
+        "round",
+        "round_amount_raw",
+        "round_amount_magnitude",
+        "cumulative_amount_lower_bound",
+        "investor_roles",
+        "planned_use_of_funds"
+      ],
+      "doesNotSupport": [
+        "cash_received",
+        "closing_date",
+        "valuation",
+        "explicit_iso_currency",
+        "exact_prior_round_amount",
+        "publication_date_from_detail_body"
+      ],
+      "locatorNotes": {
+        "financing": "正文首个融资段落；在模板 KEY RESULTS 后",
+        "useOfFunds": "What's next 章节",
+        "excludedNumbers": "模板 120x、99%、节省工作日，以及项目体量 $100B 均不是融资字段",
+        "identity": "招聘入口指向 ycombinator.com/companies/agave/jobs"
+      }
+    },
+    {
+      "id": "agave-investor-announcement",
+      "url": "https://www.accel.com/news/leading-agave-s-series-a-ai-infrastructure-for-the-construction-industry",
+      "titleSummary": "Accel 宣布领投 Agave A 轮",
+      "publisher": "Accel",
+      "author": "Vas Natarajan",
+      "host": "accel.com",
+      "sourceRole": "participating_investor_announcement",
+      "evidenceNature": "transaction_party_statement",
+      "observedOn": "2026-11-01",
+      "accessResult": "readable_after_retry_via_portfolio_link",
+      "accessNote": "首次直接打开网页工具报不可访问；随后通过 Accel Agave 公司页的文章链接成功读取同一 URL。不能把首次工具失败当作撤稿。",
+      "published": {
+        "raw": "July 7, 2026",
+        "date": "2026-07-07",
+        "precision": "day",
+        "timezoneRaw": null,
+        "normalizedUtc": null,
+        "locator": "Portfolio News 下、标题上"
+      },
+      "sourceUpdatedAt": null,
+      "shortExcerpt": "continuing this partnership by leading their Series A",
+      "summary": "投资方支持 A 轮及 Accel 领投关系，链接 useagave.com；另回顾此前领投种子轮。本篇未披露 A 轮金额或估值。",
+      "supports": [
+        "company_identity",
+        "round",
+        "announced_on",
+        "accel_lead_role",
+        "historical_seed_existence_without_amount_or_closing_date"
+      ],
+      "doesNotSupport": [
+        "round_amount_raw",
+        "round_amount_magnitude",
+        "cumulative_amount",
+        "yc_participation_in_this_round",
+        "valuation",
+        "closing_date",
+        "independent_audit"
+      ],
+      "locatorNotes": {
+        "identity": "正文 Agave 超链接指向 useagave.com",
+        "roundAndRole": "正文结尾谈此前种子轮及本次 A 轮的段落",
+        "historicalDateTrap": "关联旧文的 August 30, 2023 是旧文发布日期，不是本篇 A 轮或种子轮交割日期"
+      }
+    },
+    {
+      "id": "educato-press-background",
+      "url": "https://www.educato.com/press",
+      "titleSummary": "Educato 官方媒体背景页",
+      "publisher": "Educato",
+      "host": "educato.com",
+      "sourceRole": "company_background_page",
+      "evidenceNature": "company_statement",
+      "observedOn": "2026-11-01",
+      "accessResult": "readable",
+      "published": {
+        "raw": null,
+        "date": null,
+        "precision": "unknown",
+        "timezoneRaw": null,
+        "normalizedUtc": null
+      },
+      "sourceUpdatedAt": null,
+      "shortExcerpt": "Y Combinator-backed",
+      "summary": "页面介绍 YC 支持背景和 S24 经历。本次可读内容不提供可核定的具体融资轮次、金额或交割日期。",
+      "supports": [
+        "company_identity",
+        "yc_backing_background"
+      ],
+      "doesNotSupport": [
+        "specific_round",
+        "round_amount",
+        "currency",
+        "announced_on",
+        "closing_date",
+        "valuation",
+        "yc_standard_deal_applied_to_this_company",
+        "specific_apple_id"
+      ],
+      "locatorNotes": {
+        "background": "页面介绍与 About Educato 段落",
+        "appBoundary": "页面的 App Store 评分宣传不构成 Apple ID 关联依据",
+        "dateBoundary": "Summer 2024 是 YC 批次背景；页脚年份不是公告日"
+      }
+    }
+  ],
+  "auxiliaryPages": [
+    {
+      "id": "agave-article-index",
+      "url": "https://useagave.com/blog",
+      "publisher": "Agave",
+      "sourceRole": "company_article_index",
+      "observedOn": "2026-11-01",
+      "summary": "对应 A 轮公告标题的卡片标注 2026-07-07；仅为公司文章日期提供补充定位，不是第三个独立公告。",
+      "supports": [
+        "agave-company-announcement.published.date"
+      ],
+      "createAdditionalFundingEvent": false
+    },
+    {
+      "id": "agave-yc-identity",
+      "url": "https://www.ycombinator.com/companies/agave/jobs",
+      "publisher": "Agave via YC Jobs",
+      "sourceRole": "company_profile_on_platform",
+      "observedOn": "2026-11-01",
+      "summary": "Agave 招聘页列出官网 www.useagave.com 与建筑软件定位；与公司公告招聘入口相互对应。",
+      "supports": [
+        "agave.company_identity"
+      ],
+      "createAdditionalFundingEvent": false
+    }
+  ],
+  "records": [
+    {
+      "id": "real-boldvoice-series-a",
+      "fixtureType": "real_public_announcement",
+      "recordKind": "funding_event",
+      "title": "BoldVoice 宣布 A 轮融资",
+      "company": {
+        "name": "BoldVoice",
+        "website": "https://boldvoice.com/",
+        "existingCompanyIdHint": "yc:24065",
+        "identityBasis": "既有 pilot 报告核验官网、YC 与 Apple 链路；本次稿件融资主体同为 BoldVoice。导入隔离库前人工选择已有公司。",
+        "appIdCandidate": "1567841142",
+        "automaticallyConfirmApp": false
+      },
+      "round": {
+        "raw": "Series A",
+        "normalized": "series_a",
+        "sourceIds": [
+          "boldvoice-company-release"
+        ]
+      },
+      "amounts": [
+        {
+          "scope": "round",
+          "raw": "$21 million",
+          "kind": "exact_as_reported",
+          "value": "21000000",
+          "currencySymbol": "$",
+          "currency": null,
+          "currencyBasis": "稿件未显式写出 ISO 币种；保守样本不将所有美元符号自动解释为 USD。可由操作者另记有依据的 USD 人工解释。",
+          "sourceIds": [
+            "boldvoice-company-release"
+          ]
+        }
+      ],
+      "valuation": null,
+      "cumulativeAmount": null,
+      "financingType": "not_explicitly_specified",
+      "transactionStatusSummary": "公司宣布本轮融资；未独立核验交割或到账",
+      "occurred": {
+        "raw": null,
+        "date": null,
+        "precision": "unknown",
+        "sourceIds": []
+      },
+      "announced": {
+        "date": "2026-01-28",
+        "precision": "day",
+        "sourceIds": [
+          "boldvoice-company-release"
+        ]
+      },
+      "firstSeenAt": null,
+      "firstSeenPolicy": "runtime_generated",
+      "investors": [
+        {
+          "nameRaw": "Matrix",
+          "role": "lead",
+          "sourceIds": [
+            "boldvoice-company-release"
+          ]
+        },
+        {
+          "nameRaw": "Flybridge",
+          "role": "participant",
+          "sourceIds": [
+            "boldvoice-company-release"
+          ]
+        },
+        {
+          "nameRaw": "Xfund",
+          "role": "participant",
+          "sourceIds": [
+            "boldvoice-company-release"
+          ]
+        },
+        {
+          "nameRaw": "Corazon Capital",
+          "role": "participant",
+          "sourceIds": [
+            "boldvoice-company-release"
+          ]
+        },
+        {
+          "nameRaw": "Alumni Ventures",
+          "role": "participant",
+          "sourceIds": [
+            "boldvoice-company-release"
+          ]
+        },
+        {
+          "nameRaw": "Umami Capital",
+          "role": "participant",
+          "sourceIds": [
+            "boldvoice-company-release"
+          ]
+        },
+        {
+          "nameRaw": "Y Combinator",
+          "role": "participant",
+          "sourceIds": [
+            "boldvoice-company-release"
+          ]
+        }
+      ],
+      "investorListCompleteness": "only_parties_named_for_this_round_no_exhaustiveness_claim",
+      "useOfFunds": {
+        "summary": "公司计划用于国际扩张、教练能力及语音模型研发，非已发生支出",
+        "sourceIds": [
+          "boldvoice-company-release"
+        ]
+      },
+      "evidenceIds": [
+        "boldvoice-company-release"
+      ],
+      "verificationState": "source_statement_checked",
+      "unresolved": [
+        "交割与到账日期",
+        "估值",
+        "显式币种说明"
+      ],
+      "expected": {
+        "fundingEventDelta": 1,
+        "leadDelta": 0,
+        "newAppLinks": 0,
+        "todayCompletedFundingLabelAllowed": false
+      }
+    },
+    {
+      "id": "real-agave-series-a",
+      "fixtureType": "real_public_announcement",
+      "recordKind": "funding_event",
+      "title": "Agave 宣布 A 轮融资：公司与领投方两来源",
+      "company": {
+        "name": "Agave",
+        "website": "https://useagave.com/",
+        "existingCompanyIdHint": "yc:25273",
+        "identityBasis": "Accel 正文链接 useagave.com；公司公告招聘入口到 YC Agave，YC 页官网为 www.useagave.com。ID 为既有研究定位提示，须在目标库核对。",
+        "identitySourceIds": [
+          "agave-company-announcement",
+          "agave-investor-announcement",
+          "agave-yc-identity"
+        ],
+        "appIdCandidate": null,
+        "appState": "no_confirmed_app_for_this_fixture",
+        "automaticallyConfirmApp": false
+      },
+      "round": {
+        "raw": "Series A",
+        "normalized": "series_a",
+        "sourceIds": [
+          "agave-company-announcement",
+          "agave-investor-announcement"
+        ]
+      },
+      "amounts": [
+        {
+          "scope": "round",
+          "raw": "$15M",
+          "kind": "exact_as_reported",
+          "value": "15000000",
+          "currencySymbol": "$",
+          "currency": null,
+          "sourceIds": [
+            "agave-company-announcement"
+          ]
+        },
+        {
+          "scope": "cumulative",
+          "raw": "over $20M",
+          "kind": "lower_bound_exclusive",
+          "value": "20000000",
+          "comparison": ">",
+          "currencySymbol": "$",
+          "currency": null,
+          "sourceIds": [
+            "agave-company-announcement"
+          ]
+        }
+      ],
+      "currencyBasis": "保留来源美元符号，不把隐含币种解释冒充来源明确陈述；未知币种不妨碍保存原文",
+      "valuation": null,
+      "financingType": "not_explicitly_specified",
+      "transactionStatusSummary": "公司自述已筹集本轮；Accel 表达领投；未独立核验交割或到账",
+      "occurred": {
+        "raw": null,
+        "date": null,
+        "precision": "unknown",
+        "sourceIds": []
+      },
+      "announced": {
+        "date": "2026-07-07",
+        "precision": "day",
+        "sourceIds": [
+          "agave-investor-announcement"
+        ],
+        "corroboratingSourceIds": [
+          "agave-article-index"
+        ]
+      },
+      "firstSeenAt": null,
+      "firstSeenPolicy": "runtime_generated",
+      "investors": [
+        {
+          "nameRaw": "Accel",
+          "role": "lead",
+          "sourceIds": [
+            "agave-company-announcement",
+            "agave-investor-announcement"
+          ]
+        },
+        {
+          "nameRaw": "Y Combinator",
+          "role": "participant",
+          "sourceIds": [
+            "agave-company-announcement"
+          ]
+        }
+      ],
+      "investorListCompleteness": "only_named_parties_no_exhaustiveness_claim",
+      "useOfFunds": {
+        "summary": "公司计划扩充团队及产品范围，非已发生支出",
+        "sourceIds": [
+          "agave-company-announcement"
+        ]
+      },
+      "evidenceIds": [
+        "agave-company-announcement",
+        "agave-investor-announcement"
+      ],
+      "verificationState": "source_statements_checked_not_independent_audit",
+      "unresolved": [
+        "交割日期",
+        "估值",
+        "显式币种说明",
+        "累计融资的各历史轮次拆分"
+      ],
+      "expected": {
+        "fundingEventDelta": 1,
+        "leadDelta": 0,
+        "primaryEvidenceCount": 2,
+        "newAppLinks": 0,
+        "sumRoundAndCumulativeAllowed": false,
+        "deriveExactSeedAmountAllowed": false
+      }
+    },
+    {
+      "id": "real-educato-insufficient-evidence",
+      "fixtureType": "real_public_background_lead",
+      "recordKind": "unverified_lead",
+      "title": "Educato 的 YC 背景待补融资证据",
+      "company": {
+        "name": "Educato",
+        "website": "https://www.educato.com/",
+        "existingCompanyIdHint": "yc:29605",
+        "identityBasis": "既有 pilot 报告已核验 YC 公司到官网；本次官网 Press 页面为同一品牌及创始人背景",
+        "appIdCandidate": null,
+        "appState": "not_confirmed_not_proof_of_absence",
+        "automaticallyConfirmApp": false
+      },
+      "round": {
+        "raw": null,
+        "normalized": null,
+        "sourceIds": []
+      },
+      "amounts": [],
+      "amountRaw": null,
+      "amountValue": null,
+      "currency": null,
+      "valuation": null,
+      "financingType": "unknown",
+      "transactionStatusSummary": "只核验到公司背景，未核定一笔具体融资事件",
+      "occurred": {
+        "raw": null,
+        "date": null,
+        "precision": "unknown",
+        "sourceIds": []
+      },
+      "announced": {
+        "date": null,
+        "precision": "unknown",
+        "sourceIds": []
+      },
+      "firstSeenAt": null,
+      "firstSeenPolicy": "runtime_generated",
+      "investors": [],
+      "backgroundBackers": [
+        {
+          "nameRaw": "Y Combinator",
+          "role": "background_only_not_round_participant",
+          "sourceIds": [
+            "educato-press-background"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "educato-press-background"
+      ],
+      "verificationState": "background_checked_event_unverified",
+      "unresolved": [
+        "具体轮次",
+        "本轮金额与币种",
+        "公告日期",
+        "发生日期",
+        "该笔投资的条款与参与者"
+      ],
+      "expected": {
+        "fundingEventDelta": 0,
+        "leadDelta": 1,
+        "newAppLinks": 0,
+        "applyYcStandardDealAllowed": false,
+        "unknownAmountAsZeroAllowed": false,
+        "claimNoFundingAllowed": false
+      }
+    }
+  ],
+  "acceptanceScenarios": [
+    {
+      "id": "A01",
+      "planRefs": [
+        "F01",
+        "F11"
+      ],
+      "caseType": "real_fixture_with_test_clock",
+      "inputRefs": [
+        "real-boldvoice-series-a"
+      ],
+      "action": "隔离时钟设为 2026-11-01T05:00:00Z 后首次录入",
+      "expected": [
+        "公告日保持 2026-01-28",
+        "发生日未知",
+        "firstSeenAt 为测试首次保存时刻",
+        "可显示今天新收录，不显示今天完成融资"
+      ]
+    },
+    {
+      "id": "A02",
+      "planRefs": [
+        "F02"
+      ],
+      "caseType": "real_fixture",
+      "inputRefs": [
+        "real-agave-series-a"
+      ],
+      "action": "先公司公告建事件，再把 Accel 公告追加到该事件",
+      "expected": [
+        "一轮、两份主证据",
+        "金额仅指公司公告",
+        "Accel 领投可指两来源",
+        "YC 参投仅指公司公告",
+        "文章目录是日期辅助页，不多算一轮"
+      ]
+    },
+    {
+      "id": "A03",
+      "planRefs": [
+        "F04"
+      ],
+      "caseType": "real_fixture",
+      "inputRefs": [
+        "real-educato-insufficient-evidence"
+      ],
+      "action": "保存背景线索并查看列表与统计",
+      "expected": [
+        "线索可保存和重开",
+        "确认融资轮次不增加",
+        "金额和公告日期未知",
+        "无需 App 身份"
+      ]
+    },
+    {
+      "id": "A04",
+      "planRefs": [
+        "F03",
+        "F07"
+      ],
+      "caseType": "replay_real_fixture",
+      "inputRefs": [
+        "real-boldvoice-series-a"
+      ],
+      "action": "相同幂等键重发创建请求，再显式执行一次无变化核验",
+      "expected": [
+        "重试事件/版本/观察数量均不增加",
+        "显式核验只增加一条观察",
+        "内容版本及首次收录时间保持不变"
+      ]
+    },
+    {
+      "id": "A05",
+      "planRefs": [
+        "F03"
+      ],
+      "caseType": "synthetic_url_variants_of_real_source",
+      "inputRefs": [
+        "agave-company-announcement"
+      ],
+      "action": "追加 ?utm_source=acceptance#funding；另用 https://example.com/announcement?round=A 和 ?round=B 比较",
+      "expected": [
+        "明确追踪参数和 fragment 可去除并复用真实文档",
+        "保留业务参数 round，两个合成 URL 不强行等价",
+        "原 URL 保留"
+      ]
+    },
+    {
+      "id": "A06",
+      "planRefs": [
+        "F03",
+        "F05"
+      ],
+      "caseType": "real_document_partial_historical_reference",
+      "inputRefs": [
+        "agave-investor-announcement"
+      ],
+      "action": "在单独分支中将同一文档另挂到历史种子轮待核验记录",
+      "expected": [
+        "文档可与两条事件/线索关联",
+        "第二条只保留文中提及的种子轮及领投关系",
+        "不继承 A 轮金额、日期",
+        "不把关联旧文发布日期当交割日",
+        "不自动创建或计数第二轮"
+      ]
+    },
+    {
+      "id": "A07",
+      "planRefs": [
+        "F05",
+        "F10"
+      ],
+      "caseType": "synthetic_only",
+      "syntheticInput": {
+        "companies": [
+          {
+            "id": "test:agave-one",
+            "name": "Agave（合成同名测试）",
+            "website": "https://one.example.com"
+          },
+          {
+            "id": "test:agave-two",
+            "name": "Agave（合成同名测试）",
+            "website": "https://two.example.com"
+          }
+        ]
+      },
+      "expected": [
+        "同名不合并",
+        "两个独立身份可保存",
+        "新建纯融资公司不增加增长公司覆盖或虚构岗位",
+        "测试数据不归到真实 Agave"
+      ]
+    },
+    {
+      "id": "A08",
+      "planRefs": [
+        "F06"
+      ],
+      "caseType": "synthetic_only",
+      "syntheticInput": {
+        "company": "金额口径测试公司",
+        "amounts": [
+          {
+            "scope": "round",
+            "raw": "USD 5 million",
+            "kind": "exact",
+            "currency": "USD",
+            "value": "5000000"
+          },
+          {
+            "scope": "cumulative",
+            "raw": "over USD 8 million",
+            "kind": "lower_bound_exclusive",
+            "currency": "USD",
+            "value": "8000000"
+          },
+          {
+            "scope": "valuation",
+            "raw": "USD 30 million post-money",
+            "kind": "exact_as_reported",
+            "currency": "USD",
+            "value": "30000000"
+          }
+        ]
+      },
+      "expected": [
+        "三种口径保留",
+        "不相加为融资额",
+        "不推算未披露的上一轮精确金额",
+        "估值不是现金融资"
+      ]
+    },
+    {
+      "id": "A09",
+      "planRefs": [
+        "F06"
+      ],
+      "caseType": "synthetic_only",
+      "syntheticInput": {
+        "rawAmounts": [
+          "数千万人民币",
+          "USD 3M–5M",
+          "$10M",
+          "股权与债务合计 EUR 12M",
+          "未披露"
+        ]
+      },
+      "expected": [
+        "约数不填精确数",
+        "区间两端保留",
+        "美元符号单独不自动定币种",
+        "混合融资不计为纯股权",
+        "未披露为 null 而非 0"
+      ]
+    },
+    {
+      "id": "A10",
+      "planRefs": [
+        "F05",
+        "F07"
+      ],
+      "caseType": "synthetic_only",
+      "action": "合成公司初值 A，修改金额或归属为 B，再改回 A；另加冲突来源与 A 轮追加说明",
+      "expected": [
+        "初始 A、B、回到 A 共三版本",
+        "同值保存不多版本",
+        "冲突来源均可见并记录采用依据",
+        "追加融资与原轮仅候选关联，不自动合并",
+        "过期预期版本保存应提示冲突"
+      ]
+    },
+    {
+      "id": "A11",
+      "planRefs": [
+        "F08"
+      ],
+      "caseType": "simulated_failure_not_claim_about_real_url",
+      "inputRefs": [
+        "agave-investor-announcement"
+      ],
+      "action": "对已保存证据模拟访问失败；另模拟数据库事务失败",
+      "expected": [
+        "保留上次有效摘要、字段依据及历史",
+        "失败观察注明模拟原因与时间",
+        "不标融资撤回或金额归零",
+        "保存失败不显示成功且不留半条事件",
+        "表单可重试，不后台请求外部 URL"
+      ]
+    },
+    {
+      "id": "A12",
+      "planRefs": [
+        "F09",
+        "F10",
+        "F12"
+      ],
+      "caseType": "isolated_integration",
+      "inputRefs": [
+        "real-agave-series-a",
+        "real-educato-insufficient-evidence"
+      ],
+      "action": "独立无 App 路径保存、重开、重启；在隔离副本解除已有 App 关联",
+      "expected": [
+        "研究记录与证据持久化",
+        "不要求 App 或招聘线索",
+        "解除 App 关联不删融资",
+        "已有增长笔记和榜单不变",
+        "所有运行结果由执行者另行报告，本包不声称通过"
+      ]
+    }
+  ],
+  "adapterNotes": [
+    "apiDrafts.data 对应 FundingDraft，不含请求幂等键；调用者每次新操作生成键、网络重试复用原键。",
+    "company.id 只适用于已核对该公司身份的隔离副本；空库应替换为 name/website，不伪造 YC ID。",
+    "契约仅有一个 amount，Agave 选择本轮；累计下界保留在 notes 与公司 evidence.summary，不另建融资事件。",
+    "契约规定规范化金额须有币种；真实样本 currency 未明确时 value=null，研究层 value 仅为原文数值量级，不直接提交。",
+    "lower_bound 无严格/非严格比较字段；over 的严格大于语义必须保留在 raw 与摘要。",
+    "supports 只能表达大类；每位投资方使用 evidenceKeys，金额/日期的更细支持范围保留在摘要及本数据包。",
+    "apiDrafts 是按当前类型人工适配，未经过实际 API 或运行时校验；不得声称已验收。"
+  ],
+  "apiDrafts": [
+    {
+      "recordId": "real-boldvoice-series-a",
+      "data": {
+        "company": {
+          "id": "yc:24065"
+        },
+        "title": "BoldVoice 宣布 A 轮融资",
+        "recordKind": "event",
+        "roundRaw": "Series A",
+        "roundNormalized": "series_a",
+        "financingType": "unspecified",
+        "statusRaw": "公司宣布本轮融资；未独立核验交割或到账",
+        "amount": {
+          "raw": "$21 million",
+          "scope": "round",
+          "kind": "exact",
+          "currency": null,
+          "value": null,
+          "upper": null
+        },
+        "occurred": {
+          "raw": "",
+          "value": null,
+          "precision": "unknown"
+        },
+        "published": {
+          "raw": "2026-01-28",
+          "value": "2026-01-28",
+          "precision": "day"
+        },
+        "investors": [
+          {
+            "name": "Matrix",
+            "role": "lead",
+            "evidenceKeys": [
+              "boldvoice-company-release"
+            ]
+          },
+          {
+            "name": "Flybridge",
+            "role": "participant",
+            "evidenceKeys": [
+              "boldvoice-company-release"
+            ]
+          },
+          {
+            "name": "Xfund",
+            "role": "participant",
+            "evidenceKeys": [
+              "boldvoice-company-release"
+            ]
+          },
+          {
+            "name": "Corazon Capital",
+            "role": "participant",
+            "evidenceKeys": [
+              "boldvoice-company-release"
+            ]
+          },
+          {
+            "name": "Alumni Ventures",
+            "role": "participant",
+            "evidenceKeys": [
+              "boldvoice-company-release"
+            ]
+          },
+          {
+            "name": "Umami Capital",
+            "role": "participant",
+            "evidenceKeys": [
+              "boldvoice-company-release"
+            ]
+          },
+          {
+            "name": "Y Combinator",
+            "role": "participant",
+            "evidenceKeys": [
+              "boldvoice-company-release"
+            ]
+          }
+        ],
+        "useOfFunds": "公司计划用于国际扩张、教练能力及语音模型研发，非已发生支出",
+        "verification": "source_checked",
+        "notes": "公开来源陈述核验，不代表资金到账。发生日、估值未知；不自动关联 App。 原文金额 $21 million，币种 ISO 未显式披露，规范化数值留空。",
+        "companyReason": "既有 pilot 报告核验官网、YC 与 Apple 链路；本次稿件融资主体同为 BoldVoice。导入隔离库前人工选择已有公司。",
+        "relatedEventId": null,
+        "relationRaw": "",
+        "evidence": [
+          {
+            "key": "boldvoice-company-release",
+            "url": "https://www.prnewswire.com/news-releases/boldvoice-raises-21m-series-a-to-give-a-billion-non-native-english-speakers-their-own-ai-voice-coach-302671777.html",
+            "title": "BoldVoice 宣布 2100 万美元符号金额的 A 轮融资",
+            "publisher": "BoldVoice",
+            "role": "company",
+            "summary": "公司稿首段披露本轮金额、轮次、领投与参投名单；次段陈述扩张及研发用途。未提供交割日或估值。 发布者为 BoldVoice，PR Newswire 是分发平台；参与者以首段本轮名单为准，不含仅见背景名单的 Liquid 2。",
+            "published": {
+              "raw": "Jan 28, 2026, 09:30 ET",
+              "value": "2026-01-28T14:30:00Z",
+              "precision": "instant"
+            },
+            "sourceUpdated": {
+              "raw": "",
+              "value": null,
+              "precision": "unknown"
+            },
+            "supports": [
+              "company",
+              "round",
+              "amount",
+              "published",
+              "investors",
+              "useOfFunds",
+              "status"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "recordId": "real-agave-series-a",
+      "data": {
+        "company": {
+          "id": "yc:25273"
+        },
+        "title": "Agave 宣布 A 轮融资：公司与领投方两来源",
+        "recordKind": "event",
+        "roundRaw": "Series A",
+        "roundNormalized": "series_a",
+        "financingType": "unspecified",
+        "statusRaw": "公司自述已筹集本轮；Accel 表达领投；未独立核验交割或到账",
+        "amount": {
+          "raw": "$15M",
+          "scope": "round",
+          "kind": "exact",
+          "currency": null,
+          "value": null,
+          "upper": null
+        },
+        "occurred": {
+          "raw": "",
+          "value": null,
+          "precision": "unknown"
+        },
+        "published": {
+          "raw": "2026-07-07",
+          "value": "2026-07-07",
+          "precision": "day"
+        },
+        "investors": [
+          {
+            "name": "Accel",
+            "role": "lead",
+            "evidenceKeys": [
+              "agave-company-announcement",
+              "agave-investor-announcement"
+            ]
+          },
+          {
+            "name": "Y Combinator",
+            "role": "participant",
+            "evidenceKeys": [
+              "agave-company-announcement"
+            ]
+          }
+        ],
+        "useOfFunds": "公司计划扩充团队及产品范围，非已发生支出",
+        "verification": "source_checked",
+        "notes": "公开来源陈述核验，不代表资金到账。发生日、估值未知；不自动关联 App。 累计融资原文 over $20M（严格大于 2000 万美元符号金额），来自公司公告；累计与本轮 $15M 不相加，不反推出上一轮精确值。币种未显式写出，规范化数值留空。",
+        "companyReason": "Accel 正文链接 useagave.com；公司公告招聘入口到 YC Agave，YC 页官网为 www.useagave.com。ID 为既有研究定位提示，须在目标库核对。",
+        "relatedEventId": null,
+        "relationRaw": "",
+        "evidence": [
+          {
+            "key": "agave-company-announcement",
+            "url": "https://useagave.com/blog/announcing-agaves-15m-series-a",
+            "title": "Agave 的 A 轮融资公告",
+            "publisher": "Agave",
+            "role": "company",
+            "summary": "公司称本轮为 1500 万美元符号金额、Accel 领投、YC 继续参与；累计融资超过 2000 万美元符号金额。用途为扩大团队和产品范围。 累计原文 over $20M 为严格大于下界，不与本轮相加。来源日期依据 https://useagave.com/blog 对应文章卡片，非详情正文直接显示。",
+            "published": {
+              "raw": "2026-07-07",
+              "value": "2026-07-07",
+              "precision": "day"
+            },
+            "sourceUpdated": {
+              "raw": "",
+              "value": null,
+              "precision": "unknown"
+            },
+            "supports": [
+              "company",
+              "round",
+              "amount",
+              "investors",
+              "useOfFunds",
+              "status"
+            ]
+          },
+          {
+            "key": "agave-investor-announcement",
+            "url": "https://www.accel.com/news/leading-agave-s-series-a-ai-infrastructure-for-the-construction-industry",
+            "title": "Accel 宣布领投 Agave A 轮",
+            "publisher": "Accel",
+            "role": "investor",
+            "summary": "投资方支持 A 轮及 Accel 领投关系，链接 useagave.com；另回顾此前领投种子轮。本篇未披露 A 轮金额或估值。 本轮金额及 YC 参投不由本文支持。",
+            "published": {
+              "raw": "July 7, 2026",
+              "value": "2026-07-07",
+              "precision": "day"
+            },
+            "sourceUpdated": {
+              "raw": "",
+              "value": null,
+              "precision": "unknown"
+            },
+            "supports": [
+              "company",
+              "round",
+              "published",
+              "investors"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "recordId": "real-educato-insufficient-evidence",
+      "data": {
+        "company": {
+          "id": "yc:29605"
+        },
+        "title": "Educato 的 YC 背景待补融资证据",
+        "recordKind": "lead",
+        "roundRaw": "",
+        "roundNormalized": "",
+        "financingType": "unspecified",
+        "statusRaw": "",
+        "amount": {
+          "raw": "",
+          "scope": "round",
+          "kind": "undisclosed",
+          "currency": null,
+          "value": null,
+          "upper": null
+        },
+        "occurred": {
+          "raw": "",
+          "value": null,
+          "precision": "unknown"
+        },
+        "published": {
+          "raw": "",
+          "value": null,
+          "precision": "unknown"
+        },
+        "investors": [],
+        "useOfFunds": "",
+        "verification": "unverified",
+        "notes": "公开来源陈述核验，不代表资金到账。发生日、估值未知；不自动关联 App。 只观察到 YC 背景；不能套用 YC 一般投资条款补金额；App 未确认不等于不存在。",
+        "companyReason": "既有 pilot 报告已核验 YC 公司到官网；本次官网 Press 页面为同一品牌及创始人背景",
+        "relatedEventId": null,
+        "relationRaw": "",
+        "evidence": [
+          {
+            "key": "educato-press-background",
+            "url": "https://www.educato.com/press",
+            "title": "Educato 官方媒体背景页",
+            "publisher": "Educato",
+            "role": "company",
+            "summary": "页面介绍 YC 支持背景和 S24 经历。本次可读内容不提供可核定的具体融资轮次、金额或交割日期。",
+            "published": {
+              "raw": "",
+              "value": null,
+              "precision": "unknown"
+            },
+            "sourceUpdated": {
+              "raw": "",
+              "value": null,
+              "precision": "unknown"
+            },
+            "supports": [
+              "company"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

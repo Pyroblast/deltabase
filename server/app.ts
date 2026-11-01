@@ -1,3 +1,4 @@
+import { registerFunding } from "./funding-api.js";
 import Fastify from "fastify";
 import { registerGrowth } from "./growth-api.js";
 import staticPlugin from "@fastify/static";
@@ -303,6 +304,7 @@ export async function createApp(
       : reply.code(404).send({ error: "快照不存在" });
   });
   registerGrowth(app, store, opts.autoSync);
+  registerFunding(app, store);
   const client = opts.staticDir ?? resolve("dist/client");
   if (existsSync(client)) {
     await app.register(staticPlugin, { root: client });

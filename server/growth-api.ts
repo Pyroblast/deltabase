@@ -70,7 +70,14 @@ export function registerGrowth(
       })
       .parse(req.query);
     const allLeads = growth.rows();
-    const companyMap = new Map(growth.companies().map((c) => [c.id, c]));
+    // Company identity is shared; growth coverage counts only companies with growth leads.
+    const growthCompanyIds = new Set(allLeads.map((l) => l.companyId));
+    const companyMap = new Map(
+      growth
+        .companies()
+        .filter((c) => growthCompanyIds.has(c.id))
+        .map((c) => [c.id, c]),
+    );
     const leads = allLeads.filter((l) => {
       const c = companyMap.get(l.companyId)!;
       return (

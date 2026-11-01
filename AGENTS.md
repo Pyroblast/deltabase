@@ -13,9 +13,9 @@
 
 不同对话可能正在同一个 checkout 工作。保留其他任务的改动；开始前核对当前状态，明确改动范围。公共文件只安排一个主改方；公共模型、迁移或接口变更先明确兼容方式。
 
-当前收口期间，前端主改 `src/App.tsx`、`src/style.css`、`src/research.tsx`；后端主改 `server/`、`shared/growth.ts`、`src/growth.tsx` 和增长测试。不要并发运行共享端口和数据目录的 E2E；测试数据与个人数据库严格隔离。
+融资模块的维护边界：前端主改 `src/funding.tsx`、`src/funding.css`、`src/App.tsx`、必要的 `src/lib.tsx` 和 `tests/e2e/funding.spec.ts`；后端主改 `server/`、`shared/funding.ts`、融资规则/API测试和 `docs/design/funding-api.md`；产品研究主改 `docs/research/funding-acceptance.*`。`shared/funding.ts` 和API文档是接口契约，由后端先落地，前端读取使用。3100端口的E2E由执行者独占，移交后总控统一复验；测试数据与个人数据库严格隔离。
 
-总控统一建立首次提交与推送。除非用户另有指令，专项对话不自行提交全部工作目录，不重启其他对话启动的服务。后续开发分支使用 `codex/` 前缀。
+总控统一提交与同步GitHub。除非用户另有指令，专项对话不自行提交全部工作目录，不重启其他对话启动的服务。后续开发分支使用 `codex/` 前缀；融资MVP工作分支为 `codex/funding-mvp`，提交后以实际Git状态为准。
 
 ## 数据和验收
 

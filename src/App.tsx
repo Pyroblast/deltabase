@@ -1,4 +1,5 @@
 import { GrowthRadar, GrowthCompany } from "./growth";
+import { FundingRadar, FundingDetail, FundingNew } from "./funding";
 import { useEffect, useState } from "react";
 import {
   NavLink,
@@ -21,6 +22,7 @@ import {
   Bookmark,
   Radar,
   Activity,
+  Landmark,
   Database,
   ExternalLink,
   ChevronRight,
@@ -103,7 +105,14 @@ function Layout() {
             <Radar size={19} />
             发现
           </NavLink>
-          <NavLink to="/growth"><Activity size={19} />增长雷达</NavLink>
+          <NavLink to="/growth">
+            <Activity size={19} />
+            增长雷达
+          </NavLink>
+          <NavLink to="/funding">
+            <Landmark size={19} />
+            融资观察
+          </NavLink>
           <NavLink to="/watchlist">
             <Bookmark size={19} />
             观察名单
@@ -133,7 +142,19 @@ function Layout() {
             Deltabase <ChevronRight size={14} /> 机会研究工作台
           </span>
           <div>
-            {location.pathname.startsWith("/growth") ? <span className="status-pill"><i />增长信源 · 本地研究</span> : <StatusPill run={stats.data?.run} />}
+            {location.pathname.startsWith("/funding") ? (
+              <span className="status-pill">
+                <i />
+                融资信源 · 手动核验
+              </span>
+            ) : location.pathname.startsWith("/growth") ? (
+              <span className="status-pill">
+                <i />
+                增长信源 · 本地研究
+              </span>
+            ) : (
+              <StatusPill run={stats.data?.run} />
+            )}
           </div>
         </header>
         <main>
@@ -144,6 +165,9 @@ function Layout() {
             />
             <Route path="/growth" element={<GrowthRadar />} />
             <Route path="/growth/:id" element={<GrowthCompany />} />
+            <Route path="/funding" element={<FundingRadar />} />
+            <Route path="/funding/new" element={<FundingNew />} />
+            <Route path="/funding/:id" element={<FundingDetail />} />
             <Route path="/watchlist" element={<Watchlist />} />
             <Route
               path="/sources"

@@ -25,8 +25,23 @@ export async function api<T = any>(
     body: body !== undefined ? JSON.stringify(body) : undefined,
   });
   const json = await res.json();
-  if (!res.ok) throw new Error(json.error ?? `请求失败 ${res.status}`);
+  if (!res.ok)
+    throw new ApiError(
+      json.error ?? `请求失败 ${res.status}`,
+      res.status,
+      json,
+    );
   return json;
+}
+export class ApiError extends Error {
+  constructor(
+    message: string,
+    public status: number,
+    public details: Record<string, any>,
+  ) {
+    super(message);
+    this.name = "ApiError";
+  }
 }
 export const time = (s?: string | null) =>
   s

@@ -225,3 +225,83 @@ export const growthAppLinks = sqliteTable(
   },
   (t) => [uniqueIndex("growth_app_identity").on(t.companyId, t.appId)],
 );
+
+export const fundingEvents = sqliteTable(
+  "funding_events",
+  {
+    id: text("id").primaryKey(),
+    companyId: text("company_id")
+      .notNull()
+      .references(() => growthCompanies.id),
+    version: integer("version").notNull(),
+    payload: text("payload").notNull(),
+    fingerprint: text("fingerprint").notNull(),
+    firstSeenAt: text("first_seen_at").notNull(),
+    updatedAt: text("updated_at").notNull(),
+    archived: integer("archived").notNull().default(0),
+    duplicateOf: text("duplicate_of"),
+    archiveReason: text("archive_reason").notNull().default(""),
+  },
+  (t) => [index("funding_company").on(t.companyId)],
+);
+export const fundingDocuments = sqliteTable(
+  "funding_documents",
+  {
+    id: text("id").primaryKey(),
+    canonicalUrl: text("canonical_url").notNull(),
+    originalUrl: text("original_url").notNull(),
+    firstSeenAt: text("first_seen_at").notNull(),
+  },
+  (t) => [uniqueIndex("funding_document_url").on(t.canonicalUrl)],
+);
+export const fundingEventEvidence = sqliteTable(
+  "funding_event_evidence",
+  {
+    eventId: text("event_id")
+      .notNull()
+      .references(() => fundingEvents.id),
+    evidenceKey: text("evidence_key").notNull(),
+    documentId: text("document_id")
+      .notNull()
+      .references(() => fundingDocuments.id),
+  },
+  (t) => [
+    uniqueIndex("funding_event_evidence_key").on(t.eventId, t.evidenceKey),
+    uniqueIndex("funding_event_document").on(t.eventId, t.documentId),
+  ],
+);
+export const fundingRevisions = sqliteTable(
+  "funding_revisions",
+  {
+    id: integer("id").primaryKey({ autoIncrement: true }),
+    eventId: text("event_id")
+      .notNull()
+      .references(() => fundingEvents.id),
+    version: integer("version").notNull(),
+    createdAt: text("created_at").notNull(),
+    reason: text("reason").notNull(),
+    snapshot: text("snapshot").notNull(),
+  },
+  (t) => [uniqueIndex("funding_revision_version").on(t.eventId, t.version)],
+);
+export const fundingObservations = sqliteTable("funding_observations", {
+  id: text("id").primaryKey(),
+  eventId: text("event_id")
+    .notNull()
+    .references(() => fundingEvents.id),
+  evidenceKey: text("evidence_key").notNull(),
+  documentId: text("document_id")
+    .notNull()
+    .references(() => fundingDocuments.id),
+  observedAt: text("observed_at").notNull(),
+  outcome: text("outcome").notNull(),
+  note: text("note").notNull(),
+  version: integer("version").notNull(),
+  evidence: text("evidence").notNull(),
+});
+export const fundingIdempotency = sqliteTable("funding_idempotency", {
+  key: text("key").primaryKey(),
+  requestHash: text("request_hash").notNull(),
+  response: text("response").notNull(),
+  createdAt: text("created_at").notNull(),
+});
