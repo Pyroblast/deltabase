@@ -4,6 +4,14 @@
 
 项目管理：[范围与路线图](docs/PROJECT.md) · [架构决策](docs/ARCHITECTURE.md) · [当前进度与验收](docs/STATUS.md) · [协作约定](AGENTS.md)。
 
+## 用 Codex 继续迭代
+
+本项目采用四个长期对话：**总控与架构、前端与交互、数据采集与后端、产品研究与机会验证**。专项按文件边界交付，总控统一维护决策、更新进度、集成验收和同步GitHub；职责和进度保存在仓库中。
+
+换电脑时，克隆私有仓库，在Codex打开项目根目录，让总控先读 `AGENTS.md`、`docs/PROJECT.md`、`docs/ARCHITECTURE.md`、`docs/STATUS.md`。完整安装步骤、可直接复制的接续提示词、任务交接模板和协作边界见 **[Codex 分工协作与换机接续](docs/CODEX_COLLABORATION.md)**。
+
+Git带走已提交的代码和文档，不带走未提交改动、聊天历史、账号授权或本机SQLite。收藏、笔记和研究数据若需要一并迁移，使用下文在线备份与恢复流程单独转移；新电脑重新安装依赖，不复制旧 `node_modules/`。
+
 ## 本地启动
 
 需要 **Node.js 24 LTS**。在项目根目录执行：

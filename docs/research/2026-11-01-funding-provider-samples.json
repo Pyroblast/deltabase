@@ -1,0 +1,1640 @@
+{
+  "schemaVersion": 1,
+  "title": "同一组六家公司 × 三融资平台公开样本核对",
+  "observedOn": "2026-11-01",
+  "timezone": "Asia/Shanghai",
+  "status": "research_complete_with_access_and_verification_limits",
+  "scope": "公开搜索和页面；未注册、付费、登录、调用付费API或绕过限制。仅研究文件，不可直接导入融资事件。",
+  "method": {
+    "sampleCount": 6,
+    "cellCount": 18,
+    "comparisonInterval": null,
+    "firstObservationIsBaseline": true,
+    "coverageMeaning": "本次可观察性，不是数据库真实覆盖率或全量准确率",
+    "timePolicy": "观察日期、来源公告日、平台日期/报告截止日分开；不声称最新轮次；缓存抓取时间不等于本次观察时间",
+    "identifierPolicy": "slug为公开URL标识；不冒充API UUID/IT桔子数字公司ID",
+    "missingPolicy": "null=没有读到/无法确认；[]不证明无投资方或无原始来源",
+    "originalSourcePolicy": "provider页面、融资详情页和公司/投资方原文分开保存；独立找到的官方公告不冒充平台回链"
+  },
+  "companies": [
+    {
+      "id": "boldvoice",
+      "name": "BoldVoice",
+      "canonicalDomain": "boldvoice.com",
+      "additionalDomains": [],
+      "ycCompanyId": null
+    },
+    {
+      "id": "agave",
+      "name": "Agave",
+      "canonicalDomain": "useagave.com",
+      "additionalDomains": [],
+      "ycCompanyId": "25273"
+    },
+    {
+      "id": "educato",
+      "name": "Educato",
+      "canonicalDomain": "educato.com",
+      "additionalDomains": [],
+      "ycCompanyId": "29605"
+    },
+    {
+      "id": "reframe",
+      "name": "Reframe",
+      "canonicalDomain": "joinreframeapp.com",
+      "additionalDomains": [],
+      "ycCompanyId": null
+    },
+    {
+      "id": "moonshot",
+      "name": "Moonshot AI / 月之暗面",
+      "canonicalDomain": "moonshot.ai",
+      "additionalDomains": [
+        "moonshot.cn"
+      ],
+      "ycCompanyId": null
+    },
+    {
+      "id": "stepfun",
+      "name": "StepFun / 阶跃星辰",
+      "canonicalDomain": "stepfun.com",
+      "additionalDomains": [],
+      "ycCompanyId": null
+    }
+  ],
+  "statusDefinitions": {
+    "not_found": "有执行检索但未定位正确档案；不等于无数据",
+    "public_report_only": "公开历史报告可读；公司档案未定位",
+    "login_gated_partial": "档案身份/部分字段可读，融资关键字段注册或付费遮挡",
+    "public_readable_partial": "公开融资表可读但高级字段受限",
+    "search_index_only": "仅索引可观察，正文未成功读取"
+  },
+  "summary": {
+    "itjuzi": {
+      "profileMatched": 0,
+      "reportOnly": 2,
+      "notFound": 4
+    },
+    "crunchbase": {
+      "profileMatched": 6,
+      "keyFundingFieldsGated": 6
+    },
+    "dealroom": {
+      "profileMatched": 6,
+      "publicFundingTables": 6
+    },
+    "fullyVerifiedLatestRounds": 0
+  },
+  "officialControls": [
+    {
+      "id": "official-boldvoice",
+      "url": "https://www.prnewswire.com/news-releases/boldvoice-raises-21m-series-a-to-give-a-billion-non-native-english-speakers-their-own-ai-voice-coach-302671777.html",
+      "kind": "company_release",
+      "publishedOn": "2026-01-28",
+      "supports": {
+        "round": "Series A",
+        "amountRaw": "$21 million",
+        "lead": [
+          "Matrix"
+        ],
+        "participants": [
+          "Flybridge",
+          "Xfund",
+          "Corazon Capital",
+          "Alumni Ventures",
+          "Umami Capital",
+          "Y Combinator"
+        ]
+      },
+      "limits": "公司供稿公告；公告日不等于交割日；未证明是截至观察日最后一轮。"
+    },
+    {
+      "id": "official-agave",
+      "url": "https://useagave.com/blog/announcing-agaves-15m-series-a",
+      "dateSourceUrl": "https://useagave.com/blog",
+      "kind": "company_release",
+      "publishedOn": "2026-07-07",
+      "supports": {
+        "round": "Series A",
+        "amountRaw": "$15M",
+        "lead": [
+          "Accel"
+        ],
+        "participants": [
+          "Y Combinator"
+        ],
+        "cumulativeRaw": "over $20M"
+      },
+      "limits": "累计金额单列；本次 Accel 官方旧链接重开失败，不用它新增核验结论。"
+    },
+    {
+      "id": "official-educato",
+      "url": "https://www.educato.com/press",
+      "kind": "company_identity",
+      "publishedOn": null,
+      "supports": {
+        "backer": "Y Combinator",
+        "founders": [
+          "Codrut Lemeni",
+          "Felix Gabler"
+        ],
+        "crunchbaseLink": "https://www.crunchbase.com/organization/educato-ai"
+      },
+      "limits": "没有可核对的融资金额、轮次、融资日期。"
+    },
+    {
+      "id": "official-reframe",
+      "url": "https://www.joinreframeapp.com/faq",
+      "kind": "company_identity",
+      "publishedOn": null,
+      "supports": {
+        "developer": "Glucobit",
+        "appleId": "1485756576"
+      },
+      "limits": "身份校验；本轮检索未找到可独立确认 $12.5m Series A 的公司/投资方公告。"
+    },
+    {
+      "id": "official-moonshot",
+      "url": "https://www.moonshot.ai/en",
+      "additionalUrls": [
+        "https://www.moonshot.cn/",
+        "https://www.moonshot.ai/about"
+      ],
+      "kind": "company_identity",
+      "supports": {
+        "product": "Kimi",
+        "domains": [
+          "moonshot.ai",
+          "moonshot.cn"
+        ]
+      },
+      "limits": "中英文官网及 Kimi 链接支持品牌身份，不构成融资确认。"
+    },
+    {
+      "id": "official-alibaba",
+      "url": "https://static.alibabagroup.com/reports/fy2024/ar/ebook/EN/87/index.html",
+      "kind": "investor_annual_report",
+      "reportPeriod": "FY2024",
+      "supports": {
+        "company": "Moonshot AI Ltd",
+        "investor": "Alibaba",
+        "investmentRaw": "approximately US$0.8 billion",
+        "equityRaw": "approximately 36%"
+      },
+      "limits": "投资者财年投入合计，不是被投公司单轮总金额或精确融资日期；不用于确认 Dealroom 的 $1.0b 单轮金额。"
+    },
+    {
+      "id": "official-stepfun",
+      "url": "https://platform.stepfun.com/legal/user-agreement.html",
+      "kind": "company_identity",
+      "supports": {
+        "legalName": "上海阶跃星辰智能科技股份有限公司",
+        "product": "StepFun 开放平台",
+        "domain": "stepfun.com"
+      },
+      "limits": "主站本次读取无正文；公开开放平台协议把中英文品牌与主体对应起来。"
+    },
+    {
+      "id": "official-qiming",
+      "url": "https://www.qimingvc.com/cn/news/%E3%80%90%E5%90%AF%E6%98%8E%E5%91%A8%E6%8A%A5%C2%B7%E6%8A%95%E8%B5%84%E4%BC%81%E4%B8%9A%E8%A6%81%E9%97%BB%E5%8D%81%E6%9D%A1%E3%80%91vol-03-2026127",
+      "kind": "investor_release",
+      "publishedOn": "2026-01-27",
+      "supports": {
+        "company": "阶跃星辰（StepFun）",
+        "round": "B+",
+        "amountRaw": "超50亿人民币",
+        "investor": "启明创投",
+        "role": "进一步跟投"
+      },
+      "limits": "日前完成，精确发生日未知；人民币下界不是美元精确数；未核验 2026-05 平台后续轮次。"
+    }
+  ],
+  "records": [
+    {
+      "id": "boldvoice-itjuzi",
+      "companyId": "boldvoice",
+      "provider": "itjuzi",
+      "observedOn": "2026-11-01",
+      "queries": [
+        "site:itjuzi.com BoldVoice boldvoice.com",
+        "\"BoldVoice\" \"IT桔子\""
+      ],
+      "profileUrl": null,
+      "platformIdentifier": null,
+      "status": "not_found",
+      "identityEvidence": "未定位目标公司的平台档案，身份不能确认。",
+      "fundingObservations": [],
+      "originalSourceUrlsVisibleInProvider": [],
+      "officialCheckRefs": [
+        "official-boldvoice"
+      ],
+      "limits": [
+        "未发现可确认的公司详情 URL/数字 ID；不表示平台没有收录。",
+        "itjuzi.com 主页本次公开读取返回 HTTP 412，原因未确认，不能标为登录墙。"
+      ]
+    },
+    {
+      "id": "boldvoice-crunchbase",
+      "companyId": "boldvoice",
+      "provider": "crunchbase",
+      "observedOn": "2026-11-01",
+      "queries": [
+        "site:crunchbase.com/organization BoldVoice boldvoice.com"
+      ],
+      "profileUrl": "https://www.crunchbase.com/organization/boldvoice",
+      "platformIdentifier": {
+        "type": "public_url_slug",
+        "value": "boldvoice",
+        "apiIdVerified": false
+      },
+      "status": "login_gated_partial",
+      "identityEvidence": "官网 boldvoice.com；法律名 Wellocution Inc.；Anada Lakra / Ilya Usorov 与公司公告一致。",
+      "fundingObservations": [
+        {
+          "roundRaw": "Series A",
+          "dateRaw": null,
+          "amountRaw": null,
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Matrix",
+              "role": "lead",
+              "round": "Series A"
+            },
+            {
+              "name": "The Graduate Syndicate",
+              "role": "participant",
+              "round": "Series A",
+              "verification": "公告未列此方，未解决"
+            },
+            {
+              "name": "Y Combinator",
+              "role": "participant",
+              "round": "Series A"
+            },
+            {
+              "name": "Xfund",
+              "role": "participant",
+              "round": "Series A"
+            },
+            {
+              "name": "Umami Capital",
+              "role": "participant",
+              "round": "Series A"
+            },
+            {
+              "name": "Flybridge",
+              "role": "participant",
+              "round": "Series A"
+            },
+            {
+              "name": "Corazon Capital",
+              "role": "participant",
+              "round": "Series A"
+            },
+            {
+              "name": "Alumni Ventures",
+              "role": "participant",
+              "round": "Series A"
+            }
+          ],
+          "investorListComplete": true,
+          "verification": "公开字段；金额/日期遮挡，投资方按其对应轮次保留"
+        }
+      ],
+      "originalSourceUrlsVisibleInProvider": [],
+      "officialCheckRefs": [
+        "official-boldvoice"
+      ],
+      "limits": [
+        "注册/Pro提示，金额、公告日及原始新闻链接遮挡；未登录。",
+        "页面重复展示同一行，不计作多轮；1970、Lorem、$123等占位内容排除。",
+        "visibleRoundLabels只记录公开轮次标签，不代表完整历史或已核验最新一轮。"
+      ],
+      "visibleRoundLabels": [
+        "Series A",
+        "Seed"
+      ],
+      "platformClaimedRoundCount": 4,
+      "roundPageUrl": "https://www.crunchbase.com/funding_round/boldvoice-series-a--5cfcd1de"
+    },
+    {
+      "id": "boldvoice-dealroom",
+      "companyId": "boldvoice",
+      "provider": "dealroom",
+      "observedOn": "2026-11-01",
+      "queries": [
+        "site:app.dealroom.co/companies BoldVoice boldvoice.com"
+      ],
+      "profileUrl": "https://app.dealroom.co/companies/boldvoice",
+      "platformIdentifier": {
+        "type": "public_url_slug",
+        "value": "boldvoice",
+        "apiIdVerified": false
+      },
+      "status": "public_readable_partial",
+      "identityEvidence": "官网 boldvoice.com，英语口语训练产品匹配。",
+      "fundingObservations": [
+        {
+          "dateRaw": "Jan 2021",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Seed",
+          "amountRaw": "$125k",
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Y Combinator",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": null,
+          "originalSourceUrls": [],
+          "verification": "provider_claim_not_independently_verified"
+        },
+        {
+          "dateRaw": "Sep 2021",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Seed",
+          "amountRaw": "$2.0m",
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Ryan Merket",
+              "role": "unknown"
+            },
+            {
+              "name": "Vishal Rao",
+              "role": "unknown"
+            },
+            {
+              "name": "Gabriel Jarrosson",
+              "role": "unknown"
+            },
+            {
+              "name": "Umami Capital",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": null,
+          "originalSourceUrls": [],
+          "verification": "provider_claim_not_independently_verified"
+        },
+        {
+          "dateRaw": "Aug 2023*",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Early VC",
+          "amountRaw": "$2.5m",
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Xfund",
+              "role": "unknown"
+            },
+            {
+              "name": "Corazon Capital",
+              "role": "unknown"
+            },
+            {
+              "name": "Leonis Investissement",
+              "role": "unknown"
+            },
+            {
+              "name": "Umami Capital",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": null,
+          "originalSourceUrls": [],
+          "verification": "provider_claim_not_independently_verified"
+        },
+        {
+          "dateRaw": "Jan 2026*",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Series A",
+          "amountRaw": "$21.0m",
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Flybridge",
+              "role": "unknown"
+            },
+            {
+              "name": "Y Combinator",
+              "role": "unknown"
+            },
+            {
+              "name": "Xfund",
+              "role": "unknown"
+            },
+            {
+              "name": "Corazon Capital",
+              "role": "unknown"
+            },
+            {
+              "name": "Alumni Ventures",
+              "role": "unknown"
+            },
+            {
+              "name": "Umami Capital",
+              "role": "unknown"
+            },
+            {
+              "name": "Matrix",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": null,
+          "originalSourceUrls": [],
+          "verification": "official-boldvoice：金额、轮次、月份及投资方名单可对应；角色以官方为准"
+        }
+      ],
+      "originalSourceUrlsVisibleInProvider": [],
+      "officialCheckRefs": [
+        "official-boldvoice"
+      ],
+      "limits": [
+        "公开融资表可读；总融资、部分财务、人员与流量为升级字段。",
+        "日期按月保留；星号按原页保留，未解释其语义，不补月首为发生日。",
+        "投资方列未给领投/跟投角色；未见逐轮外部原始来源链接。",
+        "仅转录公开融资表；AI简介、000k/0000占位、估值倍数不用于补金额或证明增长。"
+      ]
+    },
+    {
+      "id": "agave-itjuzi",
+      "companyId": "agave",
+      "provider": "itjuzi",
+      "observedOn": "2026-11-01",
+      "queries": [
+        "site:itjuzi.com Agave useagave.com",
+        "\"Agave\" \"IT桔子\""
+      ],
+      "profileUrl": null,
+      "platformIdentifier": null,
+      "status": "not_found",
+      "identityEvidence": "未定位目标公司的平台档案，身份不能确认。",
+      "fundingObservations": [],
+      "originalSourceUrlsVisibleInProvider": [],
+      "officialCheckRefs": [
+        "official-agave"
+      ],
+      "limits": [
+        "未发现可确认的公司详情 URL/数字 ID；不表示平台没有收录。",
+        "itjuzi.com 主页本次公开读取返回 HTTP 412，原因未确认，不能标为登录墙。"
+      ]
+    },
+    {
+      "id": "agave-crunchbase",
+      "companyId": "agave",
+      "provider": "crunchbase",
+      "observedOn": "2026-11-01",
+      "queries": [
+        "site:crunchbase.com/organization Agave useagave.com"
+      ],
+      "profileUrl": "https://www.crunchbase.com/organization/agave-api",
+      "platformIdentifier": {
+        "type": "public_url_slug",
+        "value": "agave-api",
+        "apiIdVerified": false
+      },
+      "status": "login_gated_partial",
+      "identityEvidence": "官网 useagave.com；Agave Tech Inc.；别名 Agave API；John Zucchi 等创始人、建筑 ERP 产品匹配。不能因 slug 含 api 就排除。",
+      "fundingObservations": [
+        {
+          "roundRaw": "Series A",
+          "dateRaw": null,
+          "amountRaw": null,
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Accel",
+              "role": "lead",
+              "round": "Series A"
+            },
+            {
+              "name": "Y Combinator",
+              "role": "unknown",
+              "round": null
+            }
+          ],
+          "investorListComplete": false,
+          "verification": "公开字段；金额/日期遮挡，投资方按其对应轮次保留"
+        }
+      ],
+      "originalSourceUrlsVisibleInProvider": [],
+      "officialCheckRefs": [
+        "official-agave"
+      ],
+      "limits": [
+        "注册/Pro提示，金额、公告日及原始新闻链接遮挡；未登录。",
+        "页面重复展示同一行，不计作多轮；1970、Lorem、$123等占位内容排除。",
+        "visibleRoundLabels只记录公开轮次标签，不代表完整历史或已核验最新一轮。"
+      ],
+      "visibleRoundLabels": [
+        "Series A",
+        "Seed",
+        "Pre-Seed"
+      ],
+      "platformClaimedRoundCount": 3
+    },
+    {
+      "id": "agave-dealroom",
+      "companyId": "agave",
+      "provider": "dealroom",
+      "observedOn": "2026-11-01",
+      "queries": [
+        "site:app.dealroom.co/companies Agave useagave.com"
+      ],
+      "profileUrl": "https://app.dealroom.co/companies/agave_3",
+      "platformIdentifier": {
+        "type": "public_url_slug",
+        "value": "agave_3",
+        "apiIdVerified": false
+      },
+      "status": "public_readable_partial",
+      "identityEvidence": "官网 useagave.com，建筑 ERP，LinkedIn agave-api 匹配。",
+      "fundingObservations": [
+        {
+          "dateRaw": "Jan 2022",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Seed",
+          "amountRaw": "$500k",
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Y Combinator",
+              "role": "unknown"
+            },
+            {
+              "name": "Tom Blomfield",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": null,
+          "originalSourceUrls": [],
+          "verification": "provider_claim_not_independently_verified"
+        },
+        {
+          "dateRaw": "Jul 2022",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Seed",
+          "amountRaw": "$125k",
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Y Combinator",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": null,
+          "originalSourceUrls": [],
+          "verification": "provider_claim_not_independently_verified"
+        },
+        {
+          "dateRaw": "Aug 2023*",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Seed",
+          "amountRaw": "$2.9m",
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Accel",
+              "role": "unknown"
+            },
+            {
+              "name": "Y Combinator",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": null,
+          "originalSourceUrls": [],
+          "verification": "provider_claim_not_independently_verified"
+        },
+        {
+          "dateRaw": "Jul 2026*",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Series A",
+          "amountRaw": "$15.0m",
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Accel",
+              "role": "unknown"
+            },
+            {
+              "name": "Y Combinator",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": null,
+          "originalSourceUrls": [],
+          "verification": "official-agave：金额、轮次、月份及两家投资方可对应；角色以官方为准"
+        }
+      ],
+      "originalSourceUrlsVisibleInProvider": [],
+      "officialCheckRefs": [
+        "official-agave"
+      ],
+      "limits": [
+        "公开融资表可读；总融资、部分财务、人员与流量为升级字段。",
+        "日期按月保留；星号按原页保留，未解释其语义，不补月首为发生日。",
+        "投资方列未给领投/跟投角色；未见逐轮外部原始来源链接。",
+        "仅转录公开融资表；AI简介、000k/0000占位、估值倍数不用于补金额或证明增长。",
+        "可见历史行相加不能代替官方累计over$20M；完整性未证明。"
+      ]
+    },
+    {
+      "id": "educato-itjuzi",
+      "companyId": "educato",
+      "provider": "itjuzi",
+      "observedOn": "2026-11-01",
+      "queries": [
+        "site:itjuzi.com Educato educato.com",
+        "\"Educato\" \"IT桔子\""
+      ],
+      "profileUrl": null,
+      "platformIdentifier": null,
+      "status": "not_found",
+      "identityEvidence": "未定位目标公司的平台档案，身份不能确认。",
+      "fundingObservations": [],
+      "originalSourceUrlsVisibleInProvider": [],
+      "officialCheckRefs": [
+        "official-educato"
+      ],
+      "limits": [
+        "未发现可确认的公司详情 URL/数字 ID；不表示平台没有收录。",
+        "itjuzi.com 主页本次公开读取返回 HTTP 412，原因未确认，不能标为登录墙。"
+      ]
+    },
+    {
+      "id": "educato-crunchbase",
+      "companyId": "educato",
+      "provider": "crunchbase",
+      "observedOn": "2026-11-01",
+      "queries": [
+        "site:crunchbase.com/organization Educato educato.com"
+      ],
+      "profileUrl": "https://www.crunchbase.com/organization/educato-ai",
+      "platformIdentifier": {
+        "type": "public_url_slug",
+        "value": "educato-ai",
+        "apiIdVerified": false
+      },
+      "status": "login_gated_partial",
+      "identityEvidence": "公司 press 页直接链接 educato-ai；档案 educato.ai 链接重定向 educato.com；两位创始人匹配。",
+      "fundingObservations": [
+        {
+          "roundRaw": "Seed",
+          "dateRaw": null,
+          "amountRaw": null,
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Filter Fund VC",
+              "role": "unknown",
+              "round": "Seed"
+            },
+            {
+              "name": "Y Combinator",
+              "role": "unknown",
+              "round": null
+            }
+          ],
+          "investorListComplete": false,
+          "verification": "公开字段；金额/日期遮挡，投资方按其对应轮次保留"
+        }
+      ],
+      "originalSourceUrlsVisibleInProvider": [],
+      "officialCheckRefs": [
+        "official-educato"
+      ],
+      "limits": [
+        "注册/Pro提示，金额、公告日及原始新闻链接遮挡；未登录。",
+        "页面重复展示同一行，不计作多轮；1970、Lorem、$123等占位内容排除。",
+        "visibleRoundLabels只记录公开轮次标签，不代表完整历史或已核验最新一轮。"
+      ],
+      "visibleRoundLabels": [
+        "Seed",
+        "Pre-Seed"
+      ],
+      "platformClaimedRoundCount": 2,
+      "relatedProfiles": [
+        {
+          "url": "https://www.crunchbase.com/organization/educato-24b7",
+          "state": "possible_related_unmerged",
+          "reason": "法律名Educato Inc.、联系域educato.com，但官网bargraders.com；未见轮次表，未合并。"
+        }
+      ]
+    },
+    {
+      "id": "educato-dealroom",
+      "companyId": "educato",
+      "provider": "dealroom",
+      "observedOn": "2026-11-01",
+      "queries": [
+        "site:app.dealroom.co/companies Educato educato.com"
+      ],
+      "profileUrl": "https://app.dealroom.co/companies/educato_ai",
+      "platformIdentifier": {
+        "type": "public_url_slug",
+        "value": "educato_ai",
+        "apiIdVerified": false
+      },
+      "status": "public_readable_partial",
+      "identityEvidence": "官网 educato.com，AI 考试准备产品匹配。",
+      "fundingObservations": [
+        {
+          "dateRaw": "Aug 2024",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Seed",
+          "amountRaw": "$125k",
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Y Combinator",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": null,
+          "originalSourceUrls": [],
+          "verification": "provider_claim_not_independently_verified"
+        }
+      ],
+      "originalSourceUrlsVisibleInProvider": [],
+      "officialCheckRefs": [
+        "official-educato"
+      ],
+      "limits": [
+        "公开融资表可读；总融资、部分财务、人员与流量为升级字段。",
+        "日期按月保留；星号按原页保留，未解释其语义，不补月首为发生日。",
+        "投资方列未给领投/跟投角色；未见逐轮外部原始来源链接。",
+        "仅转录公开融资表；AI简介、000k/0000占位、估值倍数不用于补金额或证明增长。"
+      ],
+      "relatedProfiles": [
+        {
+          "url": "https://app.dealroom.co/companies/educato_ai_yc_s24_",
+          "state": "search_index_only",
+          "reason": "索引中官网相同、Seed记录相同；直接读取失败，不计作第二笔融资。"
+        }
+      ]
+    },
+    {
+      "id": "reframe-itjuzi",
+      "companyId": "reframe",
+      "provider": "itjuzi",
+      "observedOn": "2026-11-01",
+      "queries": [
+        "site:itjuzi.com Reframe joinreframeapp.com Glucobit",
+        "\"Reframe\" \"IT桔子\""
+      ],
+      "profileUrl": null,
+      "platformIdentifier": null,
+      "status": "not_found",
+      "identityEvidence": "未定位目标公司的平台档案，身份不能确认。",
+      "fundingObservations": [],
+      "originalSourceUrlsVisibleInProvider": [],
+      "officialCheckRefs": [
+        "official-reframe"
+      ],
+      "limits": [
+        "未发现可确认的公司详情 URL/数字 ID；不表示平台没有收录。",
+        "itjuzi.com 主页本次公开读取返回 HTTP 412，原因未确认，不能标为登录墙。"
+      ]
+    },
+    {
+      "id": "reframe-crunchbase",
+      "companyId": "reframe",
+      "provider": "crunchbase",
+      "observedOn": "2026-11-01",
+      "queries": [
+        "site:crunchbase.com/organization Reframe joinreframeapp.com Glucobit"
+      ],
+      "profileUrl": "https://www.crunchbase.com/organization/reframe-app",
+      "platformIdentifier": {
+        "type": "public_url_slug",
+        "value": "reframe-app",
+        "apiIdVerified": false
+      },
+      "status": "login_gated_partial",
+      "identityEvidence": "官网 joinreframeapp.com、法律名 Glucobit Inc.、减酒产品匹配。",
+      "fundingObservations": [
+        {
+          "roundRaw": "Venture - Series Unknown",
+          "dateRaw": null,
+          "amountRaw": null,
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "HOF Capital",
+              "role": "unknown",
+              "round": "Series A"
+            }
+          ],
+          "investorListComplete": false,
+          "verification": "公开字段；金额/日期遮挡，投资方按其对应轮次保留"
+        }
+      ],
+      "originalSourceUrlsVisibleInProvider": [],
+      "officialCheckRefs": [
+        "official-reframe"
+      ],
+      "limits": [
+        "注册/Pro提示，金额、公告日及原始新闻链接遮挡；未登录。",
+        "页面重复展示同一行，不计作多轮；1970、Lorem、$123等占位内容排除。",
+        "visibleRoundLabels只记录公开轮次标签，不代表完整历史或已核验最新一轮。"
+      ],
+      "visibleRoundLabels": [
+        "Venture - Series Unknown",
+        "Series A",
+        "Seed"
+      ],
+      "platformClaimedRoundCount": 5
+    },
+    {
+      "id": "reframe-dealroom",
+      "companyId": "reframe",
+      "provider": "dealroom",
+      "observedOn": "2026-11-01",
+      "queries": [
+        "site:app.dealroom.co/companies Reframe joinreframeapp.com Glucobit"
+      ],
+      "profileUrl": "https://app.dealroom.co/companies/reframe",
+      "platformIdentifier": {
+        "type": "public_url_slug",
+        "value": "reframe",
+        "apiIdVerified": false
+      },
+      "status": "public_readable_partial",
+      "identityEvidence": "官网 reframeapp.com；Apple ID 1485756576、Glucobit 和减酒用途共同匹配。",
+      "fundingObservations": [
+        {
+          "dateRaw": "Mar 2021",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Seed",
+          "amountRaw": "$1.4m",
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Atlanta Ventures",
+              "role": "unknown"
+            },
+            {
+              "name": "Christopher Klaus",
+              "role": "unknown"
+            },
+            {
+              "name": "Kyle Porter",
+              "role": "unknown"
+            },
+            {
+              "name": "Dave Harrington",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": null,
+          "originalSourceUrls": [],
+          "verification": "provider_claim_not_independently_verified"
+        },
+        {
+          "dateRaw": "Aug 2021",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Seed",
+          "amountRaw": "$125k",
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Y Combinator",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": null,
+          "originalSourceUrls": [],
+          "verification": "provider_claim_not_independently_verified"
+        },
+        {
+          "dateRaw": "Mar 2022*",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Series A",
+          "amountRaw": "$12.5m",
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Atlanta Ventures",
+              "role": "unknown"
+            },
+            {
+              "name": "Goodwater Capital",
+              "role": "unknown"
+            },
+            {
+              "name": "HOF Capital",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": "$100m",
+          "originalSourceUrls": [],
+          "verification": "provider_claim_not_independently_verified"
+        }
+      ],
+      "originalSourceUrlsVisibleInProvider": [],
+      "officialCheckRefs": [
+        "official-reframe"
+      ],
+      "limits": [
+        "公开融资表可读；总融资、部分财务、人员与流量为升级字段。",
+        "日期按月保留；星号按原页保留，未解释其语义，不补月首为发生日。",
+        "投资方列未给领投/跟投角色；未见逐轮外部原始来源链接。",
+        "仅转录公开融资表；AI简介、000k/0000占位、估值倍数不用于补金额或证明增长。"
+      ]
+    },
+    {
+      "id": "moonshot-itjuzi",
+      "companyId": "moonshot",
+      "provider": "itjuzi",
+      "observedOn": "2026-11-01",
+      "queries": [
+        "site:itjuzi.com Moonshot Kimi 月之暗面"
+      ],
+      "profileUrl": null,
+      "platformIdentifier": null,
+      "status": "public_report_only",
+      "identityEvidence": "报告同时使用月之暗面、Moonshot AI、Kimi、杨植麟，匹配目标。",
+      "fundingObservations": [
+        {
+          "roundRaw": "B轮",
+          "amountRaw": "3亿美元",
+          "amountScope": "round",
+          "dateRaw": "2024年",
+          "datePrecision": "year",
+          "dateMeaning": "report_narrative_year",
+          "investors": [],
+          "verification": "仅平台历史报告，未独立确认"
+        }
+      ],
+      "originalSourceUrlsVisibleInProvider": [],
+      "officialCheckRefs": [
+        "official-moonshot",
+        "official-alibaba"
+      ],
+      "limits": [
+        "未发现可确认的公司详情 URL/数字 ID；不表示平台没有收录。",
+        "itjuzi.com 主页本次公开读取返回 HTTP 412，原因未确认，不能标为登录墙。",
+        "报告历史覆盖不等于当前公司库覆盖；PDF正文提取可读，截图工具未返回可视图片，本地下载因DNS失败，未完成视觉复核。",
+        "2024.02.19是成为独角兽日期，不记作该B轮融资日；107亿元是融资总额，不是本轮金额。"
+      ],
+      "reportUrl": "https://cdn.itjuzi.com/pdf/eded90de9b25f6063d7a8a313c799360.pdf",
+      "reportTitle": "2024 年中国人工智能创业者人群画像报告",
+      "reportPages": [
+        50,
+        52
+      ],
+      "reportCutoff": "2024-11-27",
+      "otherMetrics": {
+        "cumulativeFundingRaw": "107亿元",
+        "valuationRaw": "33亿美元",
+        "unicornDateRaw": "2024.02.19",
+        "partialInvestors": [
+          "红杉中国",
+          "真格基金",
+          "蓝驰创投",
+          "腾讯",
+          "阿里"
+        ],
+        "footnote": "数据有换算，结果仅供参考"
+      }
+    },
+    {
+      "id": "moonshot-crunchbase",
+      "companyId": "moonshot",
+      "provider": "crunchbase",
+      "observedOn": "2026-11-01",
+      "queries": [
+        "site:crunchbase.com/organization Moonshot Kimi 月之暗面"
+      ],
+      "profileUrl": "https://www.crunchbase.com/organization/moonshot-ai-162d",
+      "platformIdentifier": {
+        "type": "public_url_slug",
+        "value": "moonshot-ai-162d",
+        "apiIdVerified": false
+      },
+      "status": "login_gated_partial",
+      "identityEvidence": "官网 moonshot.ai；北京、Kimi、杨植麟及月之暗面别名匹配。",
+      "fundingObservations": [
+        {
+          "roundRaw": "Venture - Series Unknown",
+          "dateRaw": null,
+          "amountRaw": null,
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Guozhi Investment",
+              "role": "lead",
+              "round": "Series F"
+            }
+          ],
+          "investorListComplete": false,
+          "verification": "公开字段；金额/日期遮挡，投资方按其对应轮次保留"
+        }
+      ],
+      "originalSourceUrlsVisibleInProvider": [],
+      "officialCheckRefs": [
+        "official-moonshot",
+        "official-alibaba"
+      ],
+      "limits": [
+        "注册/Pro提示，金额、公告日及原始新闻链接遮挡；未登录。",
+        "页面重复展示同一行，不计作多轮；1970、Lorem、$123等占位内容排除。",
+        "visibleRoundLabels只记录公开轮次标签，不代表完整历史或已核验最新一轮。"
+      ],
+      "visibleRoundLabels": [
+        "Venture - Series Unknown",
+        "Series F",
+        "Series D"
+      ],
+      "platformClaimedRoundCount": 9,
+      "relatedProfiles": [
+        {
+          "url": "https://www.crunchbase.com/organization/dark-side-of-the-moon",
+          "state": "same_brand_candidate",
+          "reason": "同一官网、中文别名、创始人；不是已确认同一平台底层ID。"
+        }
+      ]
+    },
+    {
+      "id": "moonshot-dealroom",
+      "companyId": "moonshot",
+      "provider": "dealroom",
+      "observedOn": "2026-11-01",
+      "queries": [
+        "site:app.dealroom.co/companies Moonshot Kimi 月之暗面"
+      ],
+      "profileUrl": "https://app.dealroom.co/companies/moonshot_ai_kimi",
+      "platformIdentifier": {
+        "type": "public_url_slug",
+        "value": "moonshot_ai_kimi",
+        "apiIdVerified": false
+      },
+      "status": "public_readable_partial",
+      "identityEvidence": "官网 moonshot.cn、Kimi、海淀匹配；已打开官网核对。",
+      "fundingObservations": [
+        {
+          "dateRaw": "Jan 2023*",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Series A",
+          "amountRaw": "$200m",
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "HSG",
+              "role": "unknown"
+            },
+            {
+              "name": "Lanchi Ventures",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": "$300m",
+          "originalSourceUrls": [],
+          "verification": "provider_claim_not_independently_verified"
+        },
+        {
+          "dateRaw": "Feb 2024*",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Series B",
+          "amountRaw": "$1.0b",
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Alibaba",
+              "role": "unknown"
+            },
+            {
+              "name": "Meituan",
+              "role": "unknown"
+            },
+            {
+              "name": "HSG",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": "$2.5b",
+          "originalSourceUrls": [],
+          "verification": "provider_claim_not_independently_verified"
+        },
+        {
+          "dateRaw": "May 2024*",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Late VC",
+          "amountRaw": "$300m",
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Alibaba",
+              "role": "unknown"
+            },
+            {
+              "name": "BlueRun Ventures",
+              "role": "unknown"
+            },
+            {
+              "name": "Tencent",
+              "role": "unknown"
+            },
+            {
+              "name": "Shunwei Capital",
+              "role": "unknown"
+            },
+            {
+              "name": "Gaorong Ventures",
+              "role": "unknown"
+            },
+            {
+              "name": "Source Code Capital",
+              "role": "unknown"
+            },
+            {
+              "name": "FunPlus",
+              "role": "unknown"
+            },
+            {
+              "name": "RedNote",
+              "role": "unknown"
+            },
+            {
+              "name": "China Merchants Group",
+              "role": "unknown"
+            },
+            {
+              "name": "Xianghe Capital",
+              "role": "unknown"
+            },
+            {
+              "name": "Sky9 Capital",
+              "role": "unknown"
+            },
+            {
+              "name": "Andon Health",
+              "role": "unknown"
+            },
+            {
+              "name": "GGV Capital",
+              "role": "unknown"
+            },
+            {
+              "name": "Five Source Capital",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": "$3.3b",
+          "originalSourceUrls": [],
+          "verification": "provider_claim_not_independently_verified"
+        },
+        {
+          "dateRaw": "Dec 2025*",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Series C",
+          "amountRaw": "$500m",
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Alibaba",
+              "role": "unknown"
+            },
+            {
+              "name": "Tencent",
+              "role": "unknown"
+            },
+            {
+              "name": "IDG Capital",
+              "role": "unknown"
+            },
+            {
+              "name": "Wang Huiwen",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": "$4.3b",
+          "originalSourceUrls": [],
+          "verification": "provider_claim_not_independently_verified"
+        },
+        {
+          "dateRaw": "Feb 2026*",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Late VC",
+          "amountRaw": "$700m",
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Alibaba",
+              "role": "unknown"
+            },
+            {
+              "name": "Tencent",
+              "role": "unknown"
+            },
+            {
+              "name": "Andon Health",
+              "role": "unknown"
+            },
+            {
+              "name": "5Y Capital",
+              "role": "unknown"
+            },
+            {
+              "name": "Five Source Capital",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": "$10.0b",
+          "originalSourceUrls": [],
+          "verification": "provider_claim_not_independently_verified"
+        },
+        {
+          "dateRaw": "May 2026*",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Series D",
+          "amountRaw": "$2.0b",
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Tsinghua Capital",
+              "role": "unknown"
+            },
+            {
+              "name": "CPE",
+              "role": "unknown"
+            },
+            {
+              "name": "Long-Z Investments",
+              "role": "unknown"
+            },
+            {
+              "name": "China Mobile SDIC Innovation",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": "$20.0b",
+          "originalSourceUrls": [],
+          "verification": "provider_claim_not_independently_verified"
+        },
+        {
+          "dateRaw": "Jul 2026*",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Late VC",
+          "amountRaw": "$3.5b",
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Chinese National Artificial Intelligence Industry Investment Fund",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": "$35.0b",
+          "originalSourceUrls": [],
+          "verification": "provider_claim_not_independently_verified"
+        },
+        {
+          "dateRaw": "Sep 2026*",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Late VC",
+          "amountRaw": null,
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Techmind VC",
+              "role": "unknown"
+            },
+            {
+              "name": "PyratzLabs",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": "$30.0b",
+          "originalSourceUrls": [],
+          "verification": "provider_claim_not_independently_verified"
+        }
+      ],
+      "originalSourceUrlsVisibleInProvider": [],
+      "officialCheckRefs": [
+        "official-moonshot",
+        "official-alibaba"
+      ],
+      "limits": [
+        "公开融资表可读；总融资、部分财务、人员与流量为升级字段。",
+        "日期按月保留；星号按原页保留，未解释其语义，不补月首为发生日。",
+        "投资方列未给领投/跟投角色；未见逐轮外部原始来源链接。",
+        "仅转录公开融资表；AI简介、000k/0000占位、估值倍数不用于补金额或证明增长。",
+        "Jan2023*融资早于同页Mar2023成立时间，需核对；与IT桔子2024年$300m轮次标签不同，不能仅凭金额认作同一事件。"
+      ]
+    },
+    {
+      "id": "stepfun-itjuzi",
+      "companyId": "stepfun",
+      "provider": "itjuzi",
+      "observedOn": "2026-11-01",
+      "queries": [
+        "site:itjuzi.com StepFun 阶跃星辰"
+      ],
+      "profileUrl": null,
+      "platformIdentifier": null,
+      "status": "public_report_only",
+      "identityEvidence": "报告使用阶跃星辰、姜大昕、自研通用大模型，匹配目标。",
+      "fundingObservations": [
+        {
+          "roundRaw": "A轮",
+          "amountRaw": null,
+          "amountScope": "round",
+          "dateRaw": "2023-11-01",
+          "datePrecision": "day_as_printed",
+          "dateMeaning": "报告表头融资时间；发生/公告不明",
+          "investors": [
+            {
+              "name": "红杉中国",
+              "role": "unknown"
+            },
+            {
+              "name": "启明创投",
+              "role": "unknown"
+            }
+          ],
+          "verification": "仅平台历史报告，投资方见p28叙述、日期见p29表格"
+        }
+      ],
+      "originalSourceUrlsVisibleInProvider": [],
+      "officialCheckRefs": [
+        "official-stepfun",
+        "official-qiming"
+      ],
+      "limits": [
+        "未发现可确认的公司详情 URL/数字 ID；不表示平台没有收录。",
+        "itjuzi.com 主页本次公开读取返回 HTTP 412，原因未确认，不能标为登录墙。",
+        "报告历史覆盖不等于当前公司库覆盖；PDF正文提取可读，截图工具未返回可视图片，本地下载因DNS失败，未完成视觉复核。"
+      ],
+      "reportUrl": "https://cdn.itjuzi.com/pdf/eded90de9b25f6063d7a8a313c799360.pdf",
+      "reportTitle": "2024 年中国人工智能创业者人群画像报告",
+      "reportPages": [
+        28,
+        29
+      ],
+      "reportCutoff": "2024-10-07"
+    },
+    {
+      "id": "stepfun-crunchbase",
+      "companyId": "stepfun",
+      "provider": "crunchbase",
+      "observedOn": "2026-11-01",
+      "queries": [
+        "site:crunchbase.com/organization StepFun 阶跃星辰"
+      ],
+      "profileUrl": "https://www.crunchbase.com/organization/stepstar",
+      "platformIdentifier": {
+        "type": "public_url_slug",
+        "value": "stepstar",
+        "apiIdVerified": false
+      },
+      "status": "login_gated_partial",
+      "identityEvidence": "官网 stepfun.com、上海、多模态模型产品匹配；官方开放平台协议验证中文主体。",
+      "fundingObservations": [
+        {
+          "roundRaw": "Venture - Series Unknown",
+          "dateRaw": null,
+          "amountRaw": null,
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Tencent",
+              "role": "unknown",
+              "round": "Venture - Series Unknown"
+            }
+          ],
+          "investorListComplete": false,
+          "verification": "公开字段；金额/日期遮挡，投资方按其对应轮次保留"
+        }
+      ],
+      "originalSourceUrlsVisibleInProvider": [],
+      "officialCheckRefs": [
+        "official-stepfun",
+        "official-qiming"
+      ],
+      "limits": [
+        "注册/Pro提示，金额、公告日及原始新闻链接遮挡；未登录。",
+        "页面重复展示同一行，不计作多轮；1970、Lorem、$123等占位内容排除。",
+        "visibleRoundLabels只记录公开轮次标签，不代表完整历史或已核验最新一轮。"
+      ],
+      "visibleRoundLabels": [
+        "Venture - Series Unknown",
+        "Series B"
+      ],
+      "platformClaimedRoundCount": 3,
+      "relatedProfiles": [
+        {
+          "url": "https://www.crunchbase.com/organization/stepfun",
+          "state": "unresolved",
+          "reason": "网站stepfun.ai、位置San Jose；未获官方跨域关联，不自动并入stepstar。"
+        }
+      ]
+    },
+    {
+      "id": "stepfun-dealroom",
+      "companyId": "stepfun",
+      "provider": "dealroom",
+      "observedOn": "2026-11-01",
+      "queries": [
+        "site:app.dealroom.co/companies StepFun 阶跃星辰"
+      ],
+      "profileUrl": "https://app.dealroom.co/companies/stepfun_1",
+      "platformIdentifier": {
+        "type": "public_url_slug",
+        "value": "stepfun_1",
+        "apiIdVerified": false
+      },
+      "status": "public_readable_partial",
+      "identityEvidence": "官网 stepfun.com、上海徐汇、姜大昕匹配；官方协议验证主体。",
+      "fundingObservations": [
+        {
+          "dateRaw": "Dec 2024*",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Series B",
+          "amountRaw": "$100m",
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Tencent",
+              "role": "unknown"
+            },
+            {
+              "name": "Qiming Venture Partners",
+              "role": "unknown"
+            },
+            {
+              "name": "5Y Capital",
+              "role": "unknown"
+            },
+            {
+              "name": "Shanghai State Investment",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": null,
+          "originalSourceUrls": [],
+          "verification": "provider_claim_not_independently_verified"
+        },
+        {
+          "dateRaw": "Jan 2026*",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Series B",
+          "amountRaw": "$717m",
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "Tencent",
+              "role": "unknown"
+            },
+            {
+              "name": "Qiming Venture Partners",
+              "role": "unknown"
+            },
+            {
+              "name": "China Life Private Equity Investment",
+              "role": "unknown"
+            },
+            {
+              "name": "5Y Capital",
+              "role": "unknown"
+            },
+            {
+              "name": "Xiamen ITG",
+              "role": "unknown"
+            },
+            {
+              "name": "Wuxi Liangxi Industry Development",
+              "role": "unknown"
+            },
+            {
+              "name": "Xuhui Capital",
+              "role": "unknown"
+            },
+            {
+              "name": "Pudong Venture Capital",
+              "role": "unknown"
+            },
+            {
+              "name": "Shaanxi Huaqin Technology Industry",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": null,
+          "originalSourceUrls": [],
+          "verification": "official-qiming：月份与启明参与可对应；B/B+、USD精确数/CNY下界存在口径差异"
+        },
+        {
+          "dateRaw": "May 2026*",
+          "datePrecision": "month",
+          "dateMeaning": "provider_unspecified",
+          "roundRaw": "Growth Equity VC",
+          "amountRaw": "$2.5b",
+          "amountScope": "round",
+          "investors": [
+            {
+              "name": "ZTE",
+              "role": "unknown"
+            },
+            {
+              "name": "Huaqin Communication",
+              "role": "unknown"
+            },
+            {
+              "name": "Shanghai Longcheer",
+              "role": "unknown"
+            },
+            {
+              "name": "OmniVision Group",
+              "role": "unknown"
+            },
+            {
+              "name": "Hong Kong Investment Corporation",
+              "role": "unknown"
+            }
+          ],
+          "valuationRaw": null,
+          "originalSourceUrls": [],
+          "verification": "provider_claim_not_independently_verified"
+        }
+      ],
+      "originalSourceUrlsVisibleInProvider": [],
+      "officialCheckRefs": [
+        "official-stepfun",
+        "official-qiming"
+      ],
+      "limits": [
+        "公开融资表可读；总融资、部分财务、人员与流量为升级字段。",
+        "日期按月保留；星号按原页保留，未解释其语义，不补月首为发生日。",
+        "投资方列未给领投/跟投角色；未见逐轮外部原始来源链接。",
+        "仅转录公开融资表；AI简介、000k/0000占位、估值倍数不用于补金额或证明增长。"
+      ]
+    }
+  ],
+  "rejectedCandidates": [
+    {
+      "companyId": "agave",
+      "url": "https://www.crunchbase.com/organization/agave",
+      "reason": "agave.com招聘平台，非目标建筑软件。"
+    },
+    {
+      "companyId": "agave",
+      "url": "https://app.dealroom.co/companies/agave",
+      "reason": "官网agave.com与AI建筑软件描述冲突；本次采用官网useagave.com的agave_3。"
+    },
+    {
+      "companyId": "reframe",
+      "url": "https://www.crunchbase.com/organization/reframe-4903",
+      "reason": "reframe.cx语音平台。"
+    },
+    {
+      "companyId": "reframe",
+      "url": "https://www.crunchbase.com/organization/reframe-256a",
+      "reason": "reframe.co.uk癌症服务。"
+    },
+    {
+      "companyId": "reframe",
+      "url": "https://app.dealroom.co/companies/reframe_1_1",
+      "reason": "英国癌症服务。"
+    },
+    {
+      "companyId": "moonshot",
+      "url": "https://www.crunchbase.com/organization/moonshot-ai",
+      "reason": "Shuttlebase、创始人Aviv Frenkel/Evyatar Segal，非Kimi。"
+    },
+    {
+      "companyId": "moonshot",
+      "url": "https://app.dealroom.co/companies/moonshot_ai",
+      "reason": "纽约电商moonshot-ai.com，非Kimi。"
+    }
+  ],
+  "followupRecommendations": [
+    "优先以公司/投资者原文形成手动证据，平台用于候选发现与身份核对。",
+    "若总控决定评估付费数据，要求提供同18格授权样本导出：稳定ID、原币金额、日期语义、轮次、投资角色、逐条原始来源与更新日；再比较采购价值。",
+    "复核Moonshot异常时间及轮次映射、StepFun B/B+与币种口径、Educato重复候选和未确认金额；不自动入库。"
+  ]
+}
